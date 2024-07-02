@@ -1,2 +1,4 @@
 # Crux-Climbing-logs
-# Crux-Climbing-logs
+
+To log climbs
+
