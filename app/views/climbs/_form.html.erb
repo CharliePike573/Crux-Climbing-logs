@@ -15,6 +15,11 @@
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
+  
+  <div>
+    <%= label_tag :grade_category, "Grade Category" %>
+    <%= select_tag :grade_category, options_for_select(@grade_categories.collect { |g| [g.name, g.id] }) %>
+  </div>
 
   <div>
     <%= form.label :grade_id, style: "display: block" %>
@@ -26,7 +31,7 @@
     <%= form.label :location, style: "display: block" %>
     <%= form.text_field :location %>
   </div>
-<% end %>
+  <% end %>
 
   <div>
     <%= form.label :climb_type, style: "display: block" %>

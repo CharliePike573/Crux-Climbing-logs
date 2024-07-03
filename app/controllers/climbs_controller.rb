@@ -1,6 +1,7 @@
 class ClimbsController < ApplicationController
   before_action :set_climb, only: %i[ show edit update destroy ]
 
+  before_action :set_grade_categories, only: %i[edit new]
   # GET /climbs or /climbs.json
   def index
     @climbs = Climb.all
@@ -66,5 +67,9 @@ class ClimbsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def climb_params
       params.require(:climb).permit(:name, :grade_id, :location, :climb_type, :attempts, :comments)
+    end
+
+    def set_grade_categories
+      @grade_categories = GradeCategory.all
     end
 end
