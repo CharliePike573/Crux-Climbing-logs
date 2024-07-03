@@ -21,10 +21,12 @@
     <%= form.number_field :grade_id %>
   </div>
 
+  <% if climb.climb_type == "outdoor" %>
   <div>
     <%= form.label :location, style: "display: block" %>
     <%= form.text_field :location %>
   </div>
+<% end %>
 
   <div>
     <%= form.label :climb_type, style: "display: block" %>

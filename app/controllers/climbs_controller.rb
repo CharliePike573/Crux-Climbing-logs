@@ -12,7 +12,7 @@ class ClimbsController < ApplicationController
 
   # GET /climbs/new
   def new
-    @climb = Climb.new
+    @climb = Climb.new(climb_type: params[:climb_type])
   end
 
   # GET /climbs/1/edit
