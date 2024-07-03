@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ .home_page {
+    display: flex; 
+    height: 100vh;
+  } 
+  
+  .home_page div { 
+    flex: 1; 
+  } 
+  
+  .home_page img { 
+    width: 100%; 
+    height: 100vh; 
+    object-fit: cover; 
+  }
