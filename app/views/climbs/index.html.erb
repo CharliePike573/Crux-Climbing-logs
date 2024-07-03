@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Climbs</h1>
+
+<div id="climbs">
+  <% @climbs.each do |climb| %>
+    <%= render climb %>
+    <p>
+      <%= link_to "Show this climb", climb %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New climb", new_climb_path %>
