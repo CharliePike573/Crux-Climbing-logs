@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "grades" do %>
+    <%= select_tag :grade_id, options_from_collection_for_select(@grades, :id, :name), include_blank: true, id: "grade_select" %>
+<% end %>

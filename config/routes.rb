@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root "home#index"
   get "climbs/:climb_type", to: "climbs#new", as: :new_climb
-  resources :grades
   resources :climbs, except:[:new]
+  resources :grade_categories, only: [:index] do
+    resources :grades, on: :collection
+  end
+ 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
