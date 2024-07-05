@@ -1,10 +1,10 @@
 <div class="home_page">
-    <div>
-        <h2>indoor</h2>
-        <%= link_to image_tag('indoor.png'), new_climb_url(climb_type: 'indoor') %>
-    </div>
-    <div>
-        <h2>outdoor</h2>
-        <%= link_to image_tag('outdoor.png'), new_climb_url(climb_type: 'outdoor') %>
-    </div>
+    <a href="<%=new_climb_url(climb_type: 'indoor')%>" class="homePanel" style="background-image:url(<%=image_url('indoor.png')%>)">
+    <h4 class="outindoor">indoor</h4>
+        <%#= link_to image_tag('indoor.png'),  %>
+    </a>
+    <a href="<%=new_climb_url(climb_type: 'outdoor')%>" class="homePanel" style="background-image:url(<%=image_url('outdoor.png')%>)">
+    <h4 class="outindoor">outdoor</h4>
+        <%#=link_to image_tag('outdoor.png'),  %>
+    </a>
 </div>

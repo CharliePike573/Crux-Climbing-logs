@@ -1,13 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Climbs</h1>
+<h1 class="climbsTag">Climbs</h1>
 
 <div id="climbs">
+<table>
+  <tr>
+    <th>Centre</th>
+    <th>Grade</th>
+    <th>Attempts</th>
+    <th>Climb Style</th>
+    <th>Indoor/Outdoor</th>
+  </tr>
+
   <% @climbs.each do |climb| %>
-    <%= render climb %>
-    <p>
-      <%= link_to "Show this climb", climb %>
-    </p>
+
+    <tr>
+      <td><%= link_to climb.name, edit_climb_path(climb) %></td>
+      <td><%= climb.attempts %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
   <% end %>
+  </table>
 </div>
 

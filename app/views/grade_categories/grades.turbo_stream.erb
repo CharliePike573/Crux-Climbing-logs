@@ -1,0 +1,3 @@
+<%= turbo_stream.update "grades" do %>
+    <%= select_tag 'climb[grade_id]', options_from_collection_for_select(@grades, :id, :name), include_blank: true %>
+<% end %>

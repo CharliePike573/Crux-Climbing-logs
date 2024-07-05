@@ -4,7 +4,7 @@ class ClimbsController < ApplicationController
   before_action :set_grade_categories, only: %i[edit new]
   # GET /climbs or /climbs.json
   def index
-    @climbs = Climb.all
+    @climbs = Climb.order(updated_at: :desc)
   end
 
   # GET /climbs/1 or /climbs/1.json
@@ -26,7 +26,7 @@ class ClimbsController < ApplicationController
 
     respond_to do |format|
       if @climb.save
-        format.html { redirect_to climb_url(@climb), notice: "Climb was successfully created." }
+        format.html { redirect_to climbs_url, notice: "Climb was successfully created." }
         format.json { render :show, status: :created, location: @climb }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class ClimbsController < ApplicationController
   def update
     respond_to do |format|
       if @climb.update(climb_params)
-        format.html { redirect_to climb_url(@climb), notice: "Climb was successfully updated." }
+        format.html { redirect_to climbs_url, notice: "Climb was successfully updated." }
         format.json { render :show, status: :ok, location: @climb }
       else
         format.html { render :edit, status: :unprocessable_entity }

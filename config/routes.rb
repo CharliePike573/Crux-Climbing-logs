@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "home#index"
+  get "climbs/:id", to: "climbs#show", as: :climb, constraints: { id: /\d+/ }
   get "climbs/:climb_type", to: "climbs#new", as: :new_climb
   resources :climbs, except:[:new]
   resources :grade_categories, only: [:index] do

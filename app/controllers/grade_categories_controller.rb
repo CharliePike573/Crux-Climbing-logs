@@ -4,9 +4,9 @@
         end
 
     def grades
-        @grades = Grade.where(grade_category_id: params[:id])
+        @grades = Grade.where(grade_category_id: params[ :id])
         respond_to do |format|
-            format.turbo_stream
+            format&.turbo_stream
         end
     end
 end
